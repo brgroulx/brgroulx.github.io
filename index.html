@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Brody Groulx - Full Stack Developer Portfolio showcasing skills in React, Node.js, and MongoDB. View my projects and contact me.">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Brody Groulx</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"></a>
+        <nav>
+            <a href="#skills" class="navigation">Skills</a>
+            <a href="#projects" class="navigation">Projects</a>
+            <a href="#contact" class="navigation">Contact Me</a>
+        </nav>
+    </header>
+    <section class="main">
+        <div class="main-content">
+            <h1 class="typewriter">Hi, I'm Brody Groulx</h1>
+            <h3 class="description">I am a self-taught full stack developer with a passion for intuitive, efficient design. 
+                I enjoy crafting user-friendly interfaces and building robust back-end systems that scale seamlessly. 
+                My skill set spans across front-end technologies like React and CSS to back-end frameworks such as Node.js and databases like MongoDB. 
+                I'm constantly learning and adapting to new technologies, driven by a love for problem-solving and a commitment to writing clean, maintainable code. 
+                Whether working solo or collaborating with teams, I thrive in environments that encourage innovation and creative solutions.</h3>
+            <div class="img-container">
+                <a href="https://github.com/brgroulx" target="_blank">
+                    <img src="images/github.png" class="icon" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/brody-groulx-00a355325/" target="_blank">
+                    <img src="images/linkedin.png" class="icon" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="skills-content">
+            <h1 class="headers">Skills</h1>
+            <div class="container">
+                <!-- First Header with Icons -->
+                <div class="item">
+                    <h2>Front-end</h2>
+                    <div class="icons">
+                        <img src="images/html.png" alt="HTML">
+                        <img src="images/css.png" alt="CSS">
+                        <img src="images/react.png" alt="React">
+                    </div>
+                </div>
+                <!-- Second Header with Icons -->
+                <div class="item">
+                    <h2>Back-end</h2>
+                    <div class="icons">
+                        <img src="images/nodejs.png" alt="Node.JS">
+                        <img src="images/mongodb.png" alt="MongoDB">
+                    </div>
+                </div>
+                <!-- Third Header with Icons -->
+                <div class="item">
+                    <h2>Other</h2>
+                    <div class="icons">
+                        <img src="images/c.png" alt="C">
+                        <img src="images/java.png" alt="Java">
+                        <img src="images/python.png" alt="Python">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="projects-content">
+            <h1 class="headers">Projects</h1>
+            <div class="project">
+                <div class="project-content">
+                    <img src="images/OCR.jpg" alt="OCR Project" class="project-image" id="normal">
+                    <div class="project-description">
+                        <h3>Optical text recognition application using Pytesseract</h3>
+                        <p>This project uses Python and Pytesseract to perform OCR on images, extracting text with high accuracy.</p>
+                        <a href="https://github.com/brgroulx/ocr-project" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-content">
+                    <img src="images/stockpredict.png" alt="Stock Price Prediction" class="project-image" id="graph">
+                    <div class="project-description">
+                        <h3>Stock Price Prediction with LSTM Neural Network</h3>
+                        <p>This project uses a Long Short-Term Memory (LSTM) neural network to predict stock prices based on historical data.</p>
+                        <ul>
+                            <li>Data Processing: Stock price data is cleaned and normalized for better model performance.</li>
+                            <li>LSTM Model: The network captures long-term dependencies in stock price movements.</li>
+                            <li>Performance: Evaluated using Mean Squared Error (MSE) and optimized for accuracy.</li>
+                            <li>Future Forecasting: Predicts stock prices for upcoming days.</li>
+                        </ul>
+                        <a href="https://github.com/brgroulx/lstm-project" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-content">
+            <h1 class="headers">Contact Me</h1>
+            <form action="mailto:brody.groulx@gmail.com" method="POST" enctype="multipart/form-data" name="ContactForm">
+                <input type="text" name="name" placeholder="Your Name" required minlength="2" maxlength="50">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required minlength="2" maxlength="500"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <script>
+                function validateForm() {
+                    const name = document.forms["ContactForm"]["name"].value;
+                    const email = document.forms["ContactForm"]["email"].value;
+                    const message = document.forms["ContactForm"]["message"].value;
+                
+
+                    const nameRegex = /^[a-zA-Z\s]+$/;
+                    if (!nameRegex.test(name)) {
+                        alert("Please enter a valid name (letters only).");
+                        return false;
+                    }
+                
+                    if (!validateEmail(email)) {
+                        alert("Please enter a valid email address.");
+                        return false;
+                    }
+                
+                    if (message.length < 10) {
+                        alert("Message must be at least 10 characters long.");
+                        return false;
+                    }
+                
+                    return true;
+                }
+                
+                function validateEmail(email) {
+                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(String(email).toLowerCase());
+                }
+            </script>
+        </div>
+    </section>
+</body>
